@@ -35,5 +35,5 @@ dependencies {
 
 run {
     //add bot token here
-    args = ["token"]
+    args = ["NDUxODYzMjM0NTcyNTgyOTQ3.DfH-Ug.77MY2G2mDeb88EZxrDcXSloYIqQ"]
 }

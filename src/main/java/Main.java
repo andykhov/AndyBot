@@ -7,5 +7,7 @@ public class Main {
         }
 
         IDiscordClient client = BotUtils.buildDiscordClient(args[0]);
+        client.getDispatcher().registerListener(new EventHandler());
+        client.login();
     }
 }
