@@ -18,8 +18,6 @@ public class EventHandler {
             } else {
                 BotUtils.sendMessage(event.getChannel(), "You do not have permission to log me out");
             }
-        } else if (event.getMessage().getContent().startsWith(BotUtils.BOT_PREFIX + "roles")) {
-            BotUtils.sendMessage(event.getChannel(), event.getGuild().getRoles().get(event.getGuild().getRoles().size() - 1).getName());
         }
     }
 
