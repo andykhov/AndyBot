@@ -26,9 +26,12 @@ public class EventHandler {
 
     @EventSubscriber
     public void onMessageReceived(MessageReceivedEvent event) {
+        /* ">hello" command */
         if (event.getMessage().getContent().startsWith(BotUtils.BOT_PREFIX + "hello")) {
             BotUtils.sendMessage(event.getChannel(), "Hi there, I'm AndyBot!");
-        } else if (event.getMessage().getContent().startsWith(BotUtils.BOT_PREFIX + "logout")) {
+        } 
+        /* ">logout" command - check if author of message has permission */
+        else if (event.getMessage().getContent().startsWith(BotUtils.BOT_PREFIX + "logout")) {
             if (hasTopRole(event.getGuild(), event.getAuthor())) {
                 BotUtils.sendMessage(event.getChannel(), "Logging out...");
                 event.getClient().logout();
@@ -58,7 +61,7 @@ public class EventHandler {
 
 
 
-    //returns true if user has the top role in the guild
+    /* returns true if user has the top role in the guild */
     private boolean hasTopRole(IGuild guild, IUser user) {
         List<IRole> roles = guild.getRoles();
         return user.hasRole(roles.get(roles.size() - 1));
